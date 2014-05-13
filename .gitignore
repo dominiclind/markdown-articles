@@ -1,3 +1,8 @@
 /.sass-cache
-/build
 /node_modules
+/build
+/css
+/fonts
+/js
+/views
+index.html
