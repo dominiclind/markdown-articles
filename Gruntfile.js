@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     // configurable paths
     var paths = {
         src: 'src',
-        dist: '.'
+        dist: 'build'
     };
 
     grunt.initConfig({
