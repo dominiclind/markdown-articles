@@ -23,9 +23,9 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider',
 		        templateUrl: 'views/article-edit.html',
 		        controller : 'ArticleEditCtrl'
 		    })
-		    .state('article-publish', {
-		        url: "/article/:id/:isEdit/publish",
-		        templateUrl: 'views/article-publish.html',
+		    .state('article-edit.publish', {
+		        url: "/publish",
+		        templateUrl: 'views/article.publish.html',
 		        controller : 'ArticlePublishCtrl'
 		    })
 
@@ -139,7 +139,7 @@ app.controller('ArticleEditCtrl', ['$scope', '$rootScope', '$stateParams', '$sta
 	}
 
 	$scope.publishArticle = function () {
-		$state.go('article-publish', {id : $stateParams.id});	
+		$state.go('.publish', {id : $stateParams.id});	
 	}
 
 }])
