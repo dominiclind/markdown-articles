@@ -1,0 +1,9 @@
+<div class="article markdown center">
+	<h1 class="article-head">{{ article.title }}</h1>
+	
+	<ul class="tags">
+		<li ng-repeat="tag in article.tags" class="tag">{{ tag.text }}</li>
+	</ul>
+	
+	<div ng-bind-html="article.text | markdown" syntax-that-code></div>
+</div>

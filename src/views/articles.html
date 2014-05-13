@@ -1,0 +1,11 @@
+<ul class="notes col-7-10">
+	
+	<li class="note" ng-repeat="article in articles | orderBy:'id':true" ng-click="viewArticle(article)">
+		<h1>{{ article.title }}</h1>
+	</li>
+
+</ul>
+
+<ul class="tags col-3-10">
+	<li class="tag" ng-repeat="tag in allTags">{{tag.text}}</li>
+</ul>

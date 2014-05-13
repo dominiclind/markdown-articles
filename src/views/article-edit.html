@@ -1,0 +1,35 @@
+<div class="edit">
+	<div class="write-note" ng-class="{'live-preview' : livePreview, 'full-preview' : fullPreview}">
+		<div class="content">
+			<input type="text" autofocus class="article-header "ng-model="article.title" placeholder="write title here.."/>
+			<textarea ng-model="article.text" class="md-edit" placeholder="write markdown here.." debounce="10"></textarea>
+		</div>
+	</div>
+
+	<div class="markdown article" ng-class="{'live-preview' : livePreview, 'full-preview' : fullPreview}">
+		<div class="content">
+			<h1>{{ article.title }}</h1>
+			<div ng-bind-html="article.text | markdown"></div>
+		</div>
+	</div>
+
+	<nav class="bottom">
+		<a class="button" ng-click="toggleLiveView()">
+			<span ng-if="!livePreview">Live preview</span>
+			<span ng-if="livePreview">close</span>
+		</a>
+
+		<a class="button" ng-click="toggleFullPreview()">				<span ng-if="!fullPreview">full preview</span>
+			<span ng-if="fullPreview">close</span>
+		</a>
+
+		<a class="button publish" ng-click="publishArticle()">
+			publish
+		</a>
+
+		<!--class="list entypo" ng-click="viewArticles()"></a>
+		<a class="preview entypo eye" ng-click="toggleEdit()" ng-hide="!edit"></a>
+		<a class="preview entypo pencil" ng-click="toggleEdit()" ng-hide="edit"></a>
+		<a class="save entypo save" ng-click="saveNote();"></a-->
+	</nav>
+</div>

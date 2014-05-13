@@ -1,0 +1,7 @@
+<div class="publish">
+	<tags-input min-length="1" ng-model="article.tags">
+	  <auto-complete source="savedTags" debounce-delay="10" min-length="1"></auto-complete>
+	</tags-input>
+
+	<a class="button" ng-if="article.tags.length > 0" ng-click="goToArticles()">Done</a>
+</div>
