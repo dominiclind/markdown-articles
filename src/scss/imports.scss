@@ -1,7 +1,7 @@
 @import '_vars.scss';
 
 @import 'components/grid.scss';
-@import 'components/_normalize.scss';
+@import 'components/reset.scss';
 @import 'components/entypo.scss';
 @import 'components/colors.scss';
 
@@ -9,8 +9,18 @@
 @import 'components/utility.scss';
 @import 'components/_mixins.scss';
 
-@import 'ng-tags-input.scss';
+
+// vendor
+@import '../vendor/scss/ng-loading-bar.scss';
+@import '../vendor/scss/ng-tags-input.scss';
 
 // styles
+@import 'nav.scss';
+@import 'ui.scss';
+
 @import 'main.scss';
+
+@import 'articles.scss';
 @import 'article.scss';
+@import 'edit.scss';
+@import 'tags.scss';

@@ -1,0 +1,135 @@
+
+.edit{
+
+	.article-header{
+		background: none;
+		outline: none;
+		border: none;
+		font-size: 26px;
+		width: 100%;
+		padding: 10px;
+		color: #333130;
+		margin: 0;
+		&:focus{
+			background:$flat-gray-2;
+			color:#333130;
+		}
+	}
+
+	.dimmer{
+		background:rgba(255,255,255,0.8);
+		position:fixed;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		z-index:10;
+	}
+
+	.publish-popup{
+		-webkit-transition:all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+		
+		-webkit-transform: translate3d(-50%,150%,0);
+		background:$flat-green-1;
+		position: fixed;
+		width:400px;
+		height:400px;
+		top: 50%;
+		left: 50%;
+
+		padding: 20px;
+		z-index:100;
+		margin-left:0;
+	}
+	.popup{
+		-webkit-transform: translate3d(-50%,-50%,0);
+	}
+
+	.center{
+		width: 700px;
+		margin: 50px auto 150px auto;
+	}
+		
+
+	.write-note, .markdown{
+		position:absolute;
+		top:50px;
+		bottom:76px;
+		padding:$padding;
+		overflow:scroll;
+	}
+
+	.write-note{
+		left: 0%;
+		width: 100%;
+		-webkit-transition:all 400ms ease;
+		//background:$flat-gray-1;
+
+		&.live-preview{
+			left:0;
+			width:50%;
+		}
+		&.full-preview{
+			left:-100%;
+		}
+
+		.content{
+			
+			max-width: 600px;
+			margin: 0 auto;
+			height: 100%;
+
+			// mark edit
+			.md-edit{
+				resize: none;
+				background:none;
+				color:rgba(0,0,0,.7);
+			    border: none;
+			    overflow: auto;
+			    outline: none;
+
+			    -webkit-box-shadow: none;
+			    -moz-box-shadow: none;
+			    box-shadow: none;
+
+				width:100%;
+				height:100%;
+				font-family:'Monaco';
+				font-size:18px;
+			}
+
+
+
+		}
+	}
+		
+	.markdown{
+		&.article{
+			max-width:none;
+		}
+		.content{
+			
+			max-width: 600px;
+			margin: 0 auto;
+			height: 100%;
+			padding-bottom: 80px;
+		}
+		width:100%;
+		left:50%;
+		border-left:1px solid grey;
+		-webkit-transition:all 400ms ease;
+		-webkit-transform:translateX(100%);
+		
+		&.live-preview, &.full-preview{
+			-webkit-transform:translateX(0);
+		}
+		
+		&.live-preview{
+			width:50%;
+		}
+		&.full-preview{
+			width:100%;
+			left:0;
+		}
+	}
+}

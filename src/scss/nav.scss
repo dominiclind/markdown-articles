@@ -1,0 +1,33 @@
+nav{
+	position:fixed;
+	padding:$padding*2 0;
+	background:white;
+	border-bottom:1px solid rgba(0,0,0,.2);
+	top:0;	
+	width:100%;
+	z-index: 100;
+	
+	.button{
+		float:right;
+		margin:0 $margin;
+		&.home{
+			position:absolute;
+		}
+
+	}
+
+	&.bottom{
+		.button{
+			float:none;
+		}
+		bottom:0;
+		top:auto;
+		text-align:center;
+		border:none;
+		border-top:1px solid grey;
+	}
+	a{
+		
+	}
+
+}

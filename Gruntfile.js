@@ -25,6 +25,21 @@ module.exports = function(grunt) {
                 }
             }
         },
+        concat : {
+            build: {
+                files : {
+                    '<%= paths.dist %>/js/vendor.js'   : [
+                        '<%= paths.src %>/vendor/js/jquery.min.js',
+                        '<%= paths.src %>/vendor/js/angular.min.js',
+                        '<%= paths.src %>/vendor/js/angular-ui-router.js',
+                        '<%= paths.src %>/vendor/js/angular-animate.min.js',
+                        '<%= paths.src %>/vendor/js/showdown.min.js',
+                        '<%= paths.src %>/vendor/js/angular/*.js'
+                    ],
+                    '<%= paths.dist %>/js/app.js'      : ['<%= paths.src %>/js/**/*.js'],
+                }
+            }
+        },
         watch: {
             dev : {
                 files: ['<%= paths.src %>/**/*','<%= paths.src %>/js/*.js'],
@@ -77,9 +92,9 @@ module.exports = function(grunt) {
                     },
                     {
                         expand: true,
-                        cwd: '<%= paths.src %>/js/',
+                        cwd: '<%= paths.src %>/partials/',
                         src: '**',
-                        dest: '<%= paths.dist %>/js/',
+                        dest: '<%= paths.dist %>/partials/',
                         flatten: false,
                         filter: 'isFile'
                     }
@@ -96,6 +111,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-usemin');
 
-    grunt.registerTask('default', ['copy:main','sass']);
+    grunt.registerTask('default', ['copy:main','sass', 'concat']);
     grunt.registerTask('build', ['sass']);
 };

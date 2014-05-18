@@ -1,32 +1,45 @@
 //@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,900);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-
-$max-width : 10000px;
+$max-width : 600px;
 
 body{
-	font-family:'PT Sans';
+	font-family:'Lato';
 }
 .article{
 	width:70%;
-	max-width:600px;
+	max-width:$max-width;
 
 	padding-top:$padding * 4;
 	margin:0 auto;	
 
-	.article-head{
-		color: #333130;
-		font-size:50px;
-		//border-bottom: 1px solid rgba(0,0,0,.1);
+	.head{
+		position:relative;
+		
+		.article-head{
+			color: #333130;
+			font-size:50px;
+			//border-bottom: 1px solid rgba(0,0,0,.1);
+		}
+
+		.comment-btn{
+			text-decoration: none;
+			font-size: 80px;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
 	}
 
 	h1, h2, h3, h4, h5 {
 	    color: #464442;
-	    font-weight: 800;
+	    font-family:'Montserrat';
+	    font-weight: 700;
 	}
 	h1, h2, h3, h4, h5, p {
 	    margin-bottom: 24px !important;
 	    padding: 0;
-	    max-width:$max-width;
 	    margin:0 auto;
 	}
 	h1 {
@@ -65,16 +78,18 @@ body{
 	    line-height: 24px;
 	}
 	p, ul, ol {
+		font-weight:300;
 		margin:0 auto;
-	    font-size: 18px;
+	    font-size: 20px;
 	    line-height: 26px;
 	    max-width:$max-width;
 	    color:rgba(0,0,0,0.7);
 	}
 
 	pre{
-		overflow:scroll;
-		margin-bottom:24px;
+		overflow: hidden;
+		margin-bottom: 24px;
+		overflow-x: scroll;
 	}
 
 	code{
