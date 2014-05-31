@@ -34,7 +34,8 @@ app.run(['$rootScope', '$urlRouter', '$state',
         
         $rootScope.$on('$stateChangeSuccess', function(e, toState, toParams, fromState, fromParams) {
             $rootScope.currentStateName = toState.name;
-            	
+            $rootScope.hideOverflow = false;
+            
             if(toParams.isEdit == 'edit'){
            		$rootScope.isEdit = true;
 			}else{

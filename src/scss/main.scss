@@ -1,14 +1,22 @@
 // main
-body{
-    background: white;
-    -webkit-font-smoothing:antialiased;
+
+h1, h2, h3, h4, h5 {
+    color: #464442;
+    font-family:'Montserrat';
+    font-weight: 700;
 }
 
-body{
+body{	
+    background: white;
+    -webkit-font-smoothing:antialiased;
 	padding-top:90px;
 	
 	&.edit{
 		overflow:hidden;
 		padding:0;
 	}
+}
+
+.overflow-hidden{
+	overflow:hidden;
 }

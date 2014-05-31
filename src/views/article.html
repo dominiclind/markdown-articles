@@ -1,13 +1,55 @@
-<div class="article markdown center">
-	<div class="head">
-		<h1 class="article-head">{{ article.title }}</h1>
-		<a ng-click="showComments()" class="comment-btn">
-			<span class="entypo comment"></span>
-		</a>
-	</div>
-	<ul class="tags">
-		<li ng-repeat="tag in article.tags" class="tag">{{ tag.text }}</li>
-	</ul>
+<div class="article-wrap" ng-class="{'comments-open' : showComments}">
 	
-	<div ng-bind-html="article.text | markdown" r-syntax-that-code></div>
+	<div class="article markdown center">
+		<div class="head">
+			<h1 class="article-head">{{ article.title }}</h1>
+		
+			<a ng-click="toggleComments()" class="comment-btn">
+				<span class="entypo comment"></span>
+			</a>
+		
+		</div>
+		<ul class="tags">
+			<li ng-repeat="tag in article.tags" class="tag">{{ tag.text }}</li>
+		</ul>
+		
+		<div ng-bind-html="article.text | markdown" r-syntax-that-code></div>
+	</div>
+
+	<div class="comments-wrap">
+		<ul class="comments" r-set-comment-size>
+			<li class="edit">
+				<p class="author">Me</p>
+				<p class="comment"><textarea></textarea></p>
+			<li>
+				<p class="author">Dominic Lind</p>
+				<p class="comment">Nice article! I was wondering about that thing, so I'm happy you addressed it</p>
+			</li>
+			<li>
+				<p class="author">Dominic Lind</p>
+				<p class="comment">Nice article! I was wondering about that thing, so I'm happy you addressed it</p>
+			</li>
+			<li>
+				<p class="author">Dominic Lind</p>
+				<p class="comment">Nice article! I was wondering about that thing, so I'm happy you addressed it</p>
+			</li>
+			<li>
+				<p class="author">Dominic Lind</p>
+				<p class="comment">Nice article! I was wondering about that thing, so I'm happy you addressed it</p>
+			</li>
+			<li>
+				<p class="author">Dominic Lind</p>
+				<p class="comment">Nice article! I was wondering about that thing, so I'm happy you addressed it</p>
+			</li>
+			<li>
+				<p class="author">Dominic Lind</p>
+				<p class="comment">Nice article! I was wondering about that thing, so I'm happy you addressed it</p>
+			</li>
+			<li>
+				<p class="author">Dominic Lind</p>
+				<p class="comment">Nice article! I was wondering about that thing, so I'm happy you addressed it</p>
+			</li>
+		</ul>
+	</div>
+
 </div>

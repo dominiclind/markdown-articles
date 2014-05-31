@@ -42,8 +42,8 @@ module.exports = function(grunt) {
         },
         watch: {
             dev : {
-                files: ['<%= paths.src %>/**/*','<%= paths.src %>/js/*.js'],
-                tasks: ['copy:main','sass'],
+                files: ['<%= paths.src %>/**/*','<%= paths.src %>/js/**/*.js'],
+                tasks: ['copy:main','sass','concat'],
             }
         },
         useminPrepare: {
@@ -111,6 +111,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-usemin');
 
-    grunt.registerTask('default', ['copy:main','sass', 'concat']);
+    grunt.registerTask('default', ['copy:main','sass','concat']);
     grunt.registerTask('build', ['sass']);
 };
