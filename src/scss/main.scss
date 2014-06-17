@@ -1,16 +1,11 @@
 // main
-
-h1, h2, h3, h4, h5 {
-    color: #464442;
-    font-family:'Montserrat';
-    font-weight: 700;
-}
-
 body{	
     background: white;
-    -webkit-font-smoothing:antialiased;
-	padding-top:90px;
+    padding-top:90px;
 	
+	&.view-article{
+		padding-top:0;
+	}
 	&.edit{
 		overflow:hidden;
 		padding:0;
@@ -20,3 +15,9 @@ body{
 .overflow-hidden{
 	overflow:hidden;
 }
+
+.content{
+	max-width: 800px;
+	margin: 0 auto;
+	height: 100%;
+}	

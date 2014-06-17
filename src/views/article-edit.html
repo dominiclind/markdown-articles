@@ -3,7 +3,7 @@
 	<input type="text" autofocus class="article-header "ng-model="article.title" placeholder="write title here.."/>
 
 	<div class="write-note" ng-class="{'live-preview' : livePreview, 'full-preview' : fullPreview}">
-		<div class="content">
+		<div class="content" r-editor r-editor-buttons="[{action:'bold', name : 'bold'}]">
 			<textarea ng-model="article.text" class="md-edit" placeholder="write markdown here.." r-debounce="10"></textarea>
 		</div>
 	</div>

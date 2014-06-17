@@ -5,10 +5,11 @@
 @import 'components/entypo.scss';
 @import 'components/colors.scss';
 
-
 @import 'components/utility.scss';
 @import 'components/_mixins.scss';
 
+
+@import 'type.scss';
 
 // vendor
 @import '../vendor/scss/ng-loading-bar.scss';
@@ -23,4 +24,11 @@
 @import 'articles.scss';
 @import 'article.scss';
 @import 'edit.scss';
+// editor
+@import 'editor/tooltip.scss';
+@import 'editor/editor.scss';
+
 @import 'tags.scss';
+
+
+@import 'hljs.scss';

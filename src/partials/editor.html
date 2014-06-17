@@ -1,0 +1,21 @@
+<div class="editor">	
+
+	<div class="editor-tooltip" ng-class="{ 'visible' : showTooltip }">
+	    <div id="editor-control">
+	    	<a ng-repeat="button in buttons" ng-click="fireControl(button.action)">{{button.name}}</a>
+			<!--a data-action="bold">Bold</a>
+			<a data-action="italic">Italic</a>
+			<a data-action="code">code</a>
+			<a data-action="code-block">code block</a>
+			<a data-action="heading">Heading</a>
+			<a data-action="quote">quote</a>
+			<a data-action="ul-list">ul list</a>
+			<a data-action="ol-list">ol list</a>
+			<a data-action="link">link</a>
+			<a data-action="image">image</a-->
+	    </div>		
+	</div>
+
+	<div class="textarea-wrap" ng-transclude></div>
+
+</div>

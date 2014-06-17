@@ -10,14 +10,18 @@ app.controller('ArticleEditCtrl', ['$scope', '$rootScope', '$stateParams', '$sta
 	$scope.article = savedArticle;
 	
 	$scope.$watch('article.text', function(text){
-		if(text.length > 0){
-			Storage.saveArticle($scope.article);
+		if(angular.isDefined(text)){
+			if(text.length > 0){
+				Storage.saveArticle($scope.article);
+			}
 		}
 	});
 
-	$scope.$watch('article.title', function(text){
-		if(text.length > 0){
-			Storage.saveArticle($scope.article);
+	$scope.$watch('article.title', function(title){
+		if(angular.isDefined(title)){
+			if(title.length > 0){
+				Storage.saveArticle($scope.article);
+			}
 		}
 	});
 

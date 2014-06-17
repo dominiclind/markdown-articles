@@ -33,8 +33,8 @@ module.exports = function(grunt) {
                         '<%= paths.src %>/vendor/js/angular.min.js',
                         '<%= paths.src %>/vendor/js/angular-ui-router.js',
                         '<%= paths.src %>/vendor/js/angular-animate.min.js',
-                        '<%= paths.src %>/vendor/js/showdown.min.js',
-                        '<%= paths.src %>/vendor/js/angular/*.js'
+                        '<%= paths.src %>/vendor/js/angular/*.js',
+                        '<%= paths.src %>/vendor/js/other/**/*.js'
                     ],
                     '<%= paths.dist %>/js/app.js'      : ['<%= paths.src %>/js/**/*.js'],
                 }

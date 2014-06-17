@@ -1,0 +1,42 @@
+.editor-tooltip{
+
+	padding:0;
+	margin:0;
+	position:absolute;
+	z-index:99;
+	top:0;
+	left:0;
+	visibility:hidden;
+	-webkit-transform:translateX(-50%);
+
+
+	&.visible{
+		visibility:visible;
+	}
+
+	#editor-control{
+		background:blue;
+		color:white;
+		position: relative;
+		
+		a{
+			display: inline-block;
+			padding: 20px;
+			font-size: 20px;
+			font-style: italic;
+			font-family: serif;
+			text-transform: uppercase;
+			font-weight: bold;
+
+			cursor:pointer;
+
+			&:hover{
+				background:red;
+				color:white;
+			}
+		}
+
+	}
+
+
+}
