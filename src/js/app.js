@@ -3,6 +3,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'cfpLoading
     function($stateProvider, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider) {
         $httpProvider.defaults.withCredentials = true;
         $urlRouterProvider.otherwise('articles');
+        cfpLoadingBarProvider.includeSpinner = false;
 
 
 		$stateProvider

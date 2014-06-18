@@ -1,9 +1,28 @@
-<nav class="top" ng-hide="$root.isEdit">
-	<div class="default-buttons">
-		<a class="button home"  ng-hide="$root.currentStateName == 'articles'" ng-click="goToArticles();">home</a>
+<nav class="top clearfix" ng-hide="$root.isEdit">
+	<a class="home logo" ng-click="goToArticles();"></a>
 		
-		<a class="button filled" ng-click="newArticle();">write</a>
-		<a class="button" ng-show="$root.currentStateName == 'article'"ng-click="editArticle();">edit</a>
+	<div class="default-buttons">
+		
+		<a class="button" ng-click="search();">
+			<span class="entypo search"></span>
+			search
+		</a>
+
+		<a class="button write filled" ng-click="newArticle();">
+			<span class="entypo text-doc"></span>
+			<span class="entypo plus"></span>
+			write
+		</a>
+
+		<!--a class="button" ng-show="$root.currentStateName == 'article'"ng-click="editArticle();">
+			<span class="entypo pencil"></span>
+			edit
+		</a-->
+
+
+		<a class="user" ng-click="editArticle();">
+			<span class="entypo user"></span>
+		</a>
 	</div>
-	<a class="button" ng-click="search();">search</a>
+
 </nav>

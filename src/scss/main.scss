@@ -1,15 +1,25 @@
+$UI_BASE_COLOR:$flat-blue-1;
+
+
+// styles
+@import 'nav.scss';
+@import 'ui.scss';
+
+@import 'articles.scss';
+@import 'article.scss';
+@import 'edit.scss';
+// editor
+@import 'editor/tooltip.scss';
+@import 'editor/editor.scss';
+
+@import 'tags.scss';
+
+
+
+
 // main
 body{	
-    background: white;
-    padding-top:90px;
-	
-	&.view-article{
-		padding-top:0;
-	}
-	&.edit{
-		overflow:hidden;
-		padding:0;
-	}
+    background: white;	
 }
 
 .overflow-hidden{

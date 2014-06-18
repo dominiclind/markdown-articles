@@ -1,0 +1,47 @@
+a{
+	text-decoration:none;
+	cursor:pointer;
+
+	&:hover{
+		text-decoration:none;
+	}
+}
+
+.button{
+	display:inline-block;
+	height:40px;
+	padding:9px 15px;
+
+	font-family:'Avenir';
+	font-size:14px;
+	font-weight:900;
+	text-transform:uppercase;
+
+	border:2px solid $UI_BASE_COLOR;
+	color:$UI_BASE_COLOR;
+
+	@include vendor(border-radius, 999px);
+
+
+	.entypo{
+		position:relative;
+		top:2px;
+
+		font-size: 28px;
+	}
+
+	&:hover{
+		background:$UI_BASE_COLOR;
+		color:white;
+	}
+
+
+	&.write{
+		.plus{
+			left: -9px;
+			text-shadow: -3px 0px 0px white;
+			top: 4px;
+			margin-right: -9px;
+		}
+	}
+}

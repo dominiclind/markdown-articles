@@ -14,21 +14,8 @@
 // vendor
 @import '../vendor/scss/ng-loading-bar.scss';
 @import '../vendor/scss/ng-tags-input.scss';
+@import 'hljs.scss';
 
-// styles
-@import 'nav.scss';
-@import 'ui.scss';
+
 
 @import 'main.scss';
-
-@import 'articles.scss';
-@import 'article.scss';
-@import 'edit.scss';
-// editor
-@import 'editor/tooltip.scss';
-@import 'editor/editor.scss';
-
-@import 'tags.scss';
-
-
-@import 'hljs.scss';

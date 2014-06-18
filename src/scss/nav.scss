@@ -1,48 +1,36 @@
 nav{
-	position:fixed;
-	padding:$padding*2 0;
+	//position:fixed;
+	padding:$padding*2;
 	top:0;	
 	width:100%;
 	z-index: 100;
-	
-	&.black{
-		background:rgba(0,0,0,0.2)
-	}
 
-	.button{
+
+	.logo{
+		background:url('../img/river-logo-small.png');
+		display:inline-block;
+		height:52px;
+		width:28px;
+		float:left;
+
+		cursor:pointer;
+	}
+	.default-buttons{
 		float:right;
-		margin:0 $margin;
-		&.home{
-			position:absolute;
-		}
-
 	}
 
-	&.bottom{
-		.button{
-			float:none;
-		}
-		bottom:0;
-		top:auto;
-		text-align:center;
-		border:none;
-		border-top:1px solid grey;
-	}
-}
-
-.view-article{
-	.button{
-		border: 2px solid white;
-		color:white;
+	a.user{
+		height: 40px;
+		padding: 1px 0;
+		color: $UI_BASE_COLOR;
+		font-size: 28px;
+		width: 40px;
+		text-align: center;
+		@include vendor( border-radius,  50%);
 
 		&:hover{
-			background:white;
-			color:$flat-blue-1;
-		}
-
-		&.filled{
-			background:white;
-			color:$flat-blue-1;
+			background:$UI_BASE_COLOR;
+			color:white;
 		}
 	}
 }
