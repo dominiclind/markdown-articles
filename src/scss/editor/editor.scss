@@ -1,44 +1,30 @@
-.write-note{
-	left: 0%;
-	width: 100%;
-	-webkit-transition:all 400ms ease;
-	//background:$flat-gray-1;
+.editor,.textarea-wrap{
+	height:100%;
+}
 
-	&.live-preview{
-		left:0;
-		width:50%;
-	}
-	&.full-preview{
-		left:-100%;
-	}
+// mark edit
+.editor{
+	position:relative;
 
-	.content{
-		.editor,.textarea-wrap{
-			height:100%;
-		}
+	textarea{
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		top: 0;
+		resize: none;
+		background:none;
+		color:rgba(0,0,0,.7);
+	    border: none;
+	    overflow: auto;
+	    outline: hidden;
 
-		// mark edit
-		.editor{
-			position:relative;
+	    -webkit-box-shadow: none;
+	    -moz-box-shadow: none;
+	    box-shadow: none;
 
-			textarea{
-				resize: none;
-				background:none;
-				color:rgba(0,0,0,.7);
-			    border: none;
-			    overflow: auto;
-			    outline: none;
-
-			    -webkit-box-shadow: none;
-			    -moz-box-shadow: none;
-			    box-shadow: none;
-
-				width:100%;
-				height:100%;
-				font-family:'Monaco';
-				font-size:18px;
-			}
-		}
-
+		width:100%;
+		height:100%;
+		font-family:'Monaco';
+		font-size:18px;
 	}
 }

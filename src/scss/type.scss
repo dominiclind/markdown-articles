@@ -5,14 +5,15 @@
 
 body{	
 	font-family:'Merriweather';
+    font-family:'Droid serif';
 	-webkit-font-smoothing:antialiased;
 	
 }
 h1, h2, h3, h4, h5 {
-    font-family:'Lato';
-    font-weight:900;
+    font-family:'Source Sans Pro';
+    font-weight:700;
     color:#2B2B2B;
-}
+}   
 
 
 
@@ -50,7 +51,7 @@ a {
     margin: 0;
     padding: 0;
     vertical-align: baseline;
-	text-decoration:none;
+	text-decoration:underline;
 
     &:hover{
     	text-decoration:underline;
@@ -59,13 +60,12 @@ a {
 }
 ul, ol {
     margin: 0;
-    margin-left: -$margin*4;
 }
 li {
     line-height: 24px;
 }
 p, ul, ol {
-	margin-bottom: $margin*2 !important;
+    margin-bottom:20px;
 	font-weight:400;
 	font-size: 18px;
     line-height: 28px;

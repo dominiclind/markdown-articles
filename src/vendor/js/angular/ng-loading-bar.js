@@ -96,13 +96,10 @@ angular.module('cfp.loadingBarInterceptor', ['cfp.loadingBar'])
 
       return {
         'request': function(config) {
-          console.log("REQUEST STARTED");
           // Check to make sure this request hasn't already been cached and that
           // the requester didn't explicitly ask us to ignore this request:
           if (!config.ignoreLoadingBar && !isCached(config)) {
             $rootScope.$broadcast('cfpLoadingBar:loading', {url: config.url});
-            console.log(cfpLoadingBar);
-
             if (reqsTotal === 0) {
               startTimeout = $timeout(function() {
                 cfpLoadingBar.start();

@@ -1,0 +1,37 @@
+.floaty{
+	position:relative;
+
+	
+	.floaty-label{
+		font-family: 'Source Sans Pro';
+		font-weight: 900;
+		font-size: 14px;
+		position: absolute;
+		top: 50%;
+		text-transform: uppercase;
+		opacity:0;
+		-webkit-transition: opacity 400ms ease 200ms, left 400ms ease;
+		z-index:-10;
+
+
+
+		&.type-title{
+			margin-top: -12px;
+		
+			&.showing{
+				opacity:0.5;
+			}
+
+		}
+
+		&.type-subtitle{
+			margin-top: -7px;
+
+			&.showing{
+				opacity:0.3;
+			}
+		}
+	}
+
+
+}

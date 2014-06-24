@@ -1,15 +1,10 @@
 <div class="head">
-	<h1 class="article-head">{{ article.title }}</h1>
+	<h1 class="article-head content">{{ article.title }}</h1>
+	<p class="subtitle content">{{article.subtitle}}</p>
 </div>
 
-<div class="article-wrap" ng-class="{'comments-open' : showComments}">
+<div class="content">
 	
-	<div class="article markdown center">
-
-		<!--ul class="tags">
-			<li ng-repeat="tag in article.tags" class="tag">{{ tag.text }}</li>
-		</ul-->
-
-		<div ng-bind-html="article.text | markdown" r-syntax-that-code></div>
-	</div>
+	<div ng-bind-html="article.text | markdown" r-syntax-that-code></div>
+	
 </div>

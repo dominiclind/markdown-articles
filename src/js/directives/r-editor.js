@@ -17,7 +17,8 @@ app.directive('rEditor', ['$timeout', function ($timeout) {
             toggleWrapping('`', '`');
         },
         'code-block': function() {
-            myEditor.indent('    ');
+            //myEditor.indent('    ');
+            toggleWrapping('\n```', '\n```');
         },
         'quote': function() {
             myEditor.indent('> ');
@@ -160,16 +161,20 @@ app.directive('rEditor', ['$timeout', function ($timeout) {
 
   
 	return {
-		restrict: 'A',
+		restrict: 'AE',
 		transclude : true,
 		templateUrl : 'partials/editor.html',
 		link: function (scope, elm, attr) {
        		//myEditor = new Editor(elm[0]);
        		var textarea = elm.find('textarea')[0],
-       		tooltip      = elm.find('.editor-tooltip');
+       		editorWrap   = elm.find('.editor'),
+            tooltip      = elm.find('.editor-tooltip');
+
+            editorWrap.css({
+                'min-height' : (window.innerHeight - editorWrap[0].offsetTop) + 'px !important'
+            })
 
 
-			console.log(tooltip);
 
        		myEditor = new Editor(textarea);
 
@@ -181,7 +186,11 @@ app.directive('rEditor', ['$timeout', function ($timeout) {
        			{
        				action : 'heading',
        				name : 'h'
-       			}
+       			},
+                {
+                    action : 'code-block',
+                    name : 'code'
+                }
        		];
 
        		scope.buttons = defaults;
@@ -227,7 +236,6 @@ app.directive('rEditor', ['$timeout', function ($timeout) {
 		    	}
 		    };
 			
-
        		// events
 
 			// on mouseup show popmenu

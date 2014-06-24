@@ -1,0 +1,17 @@
+<div class="grid grid-container grid-container-center article-list">
+	<div class="content">
+	
+		<ul class="filter">
+			<li ng-repeat="filter in filters"><a ng-click="filterArticles(filter.action)" ng-class="{'active' : filter.action == currentFilter}">{{filter.name}}</a></li>
+		</ul>
+
+		<ul>
+			<li class="list-item" ng-repeat="article in articles | orderBy:'id':true" ng-click="viewArticle(article)">
+				<h1 class="title">{{ article.title }}</h1>
+				<p class="subtitle">{{article.subtitle}}</p>
+			</li>
+		</ul>
+
+	</div>
+
+</div>

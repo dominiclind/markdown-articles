@@ -1,5 +1,9 @@
 $UI_BASE_COLOR:$flat-blue-1;
 
+$max_width : 700px;
+$percent_width : 85%;
+
+
 
 // styles
 @import 'nav.scss';
@@ -27,7 +31,8 @@ body{
 }
 
 .content{
-	max-width: 800px;
+	width:$percent_width;
+	max-width: $max_width;
 	margin: 0 auto;
 	height: 100%;
 }	

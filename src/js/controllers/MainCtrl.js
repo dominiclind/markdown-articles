@@ -19,16 +19,19 @@ app.controller('MainCtrl', ['$scope', '$rootScope', '$state', '$stateParams', fu
 	// public
 	//
 
-	// public
+	$scope.goToMe = function() {
+		$state.go('me');
+	}
+
 	$scope.goToArticles = function() {
 		$state.go('articles');
 	}
 	$scope.newArticle = function() {
 		$state.go('article-edit', {id : new Date().getTime(), isEdit : 'edit'});
 	}
-	// public
 	$scope.editArticle = function() {
 		$state.go('article-edit', {id : $stateParams.id, isEdit : 'edit'});
 	}
+
 
 }])

@@ -1,44 +1,50 @@
 <div class="edit">
-	
-	<input type="text" autofocus class="article-header "ng-model="article.title" placeholder="write title here.."/>
-
-	<div class="write-note" ng-class="{'live-preview' : livePreview, 'full-preview' : fullPreview}">
-		<div class="content" r-editor r-editor-buttons="[{action:'bold', name : 'bold'}]">
-			<textarea ng-model="article.text" class="md-edit" placeholder="write markdown here.." r-debounce="10"></textarea>
+	<div class="content">
+		<div class="head">
+			<textarea msd-elastic class="title" ng-model="article.title" r-floaty-label="title" placeholder="write title here..."/></textarea>
+			<textarea r-floaty-label="subtitle" msd-elastic class="subtitle" ng-model="article.subtitle" placeholder="write subtitle here..."/></textarea>
 		</div>
+		
+		<r-editor>
+			<textarea msd-elastic ng-model="article.text" class="md-edit" placeholder="write markdown here.." r-debounce="10"></textarea>
+		</r-editor>
+
+		<!--div class="write-note" ng-class="{'live-preview' : livePreview, 'full-preview' : fullPreview}">
+			<div class="content" r-editor>
+				<textarea ng-model="article.text" class="md-edit" placeholder="write markdown here.." r-debounce="10"></textarea>
+			</div>
+		</div-->
+
+		<!--div class="markdown article" ng-class="{'live-preview' : livePreview, 'full-preview' : fullPreview}">
+			<div class="content">
+				<div ng-bind-html="article.text | markdown"></div>
+			</div>
+		</div-->
+
+		<!--nav class="bottom">
+			<a class="button" ng-click="toggleLiveView()">
+				<span ng-if="!livePreview">Live preview</span>
+				<span ng-if="livePreview">close</span>
+			</a>
+
+			<a class="button" ng-click="toggleFullPreview()">
+				<span ng-if="!fullPreview">full preview</span>
+				<span ng-if="fullPreview">close</span>
+			</a>
+
+			<a class="button publish" ng-click="publishArticle()">publish</a>
+
+			<class="list entypo" ng-click="viewArticles()"></a>
+			<a class="preview entypo eye" ng-click="toggleEdit()" ng-hide="!edit"></a>
+			<a class="preview entypo pencil" ng-click="toggleEdit()" ng-hide="edit"></a>
+			<a class="save entypo save" ng-click="saveNote();"></a>
+		</nav-->
+
+		<!--div class="dimmer" ng-show="$root.currentStateName == 'article-edit.publish'"></div>
+
+		<div class="publish-popup" ng-class="{popup : $root.currentStateName == 'article-edit.publish'}">
+			<div ui-view ></div>
+		</div-->
 	</div>
-
-	<div class="markdown article" ng-class="{'live-preview' : livePreview, 'full-preview' : fullPreview}">
-		<div class="content">
-			<div ng-bind-html="article.text | markdown"></div>
-		</div>
-	</div>
-
-	<nav class="bottom">
-		<a class="button" ng-click="toggleLiveView()">
-			<span ng-if="!livePreview">Live preview</span>
-			<span ng-if="livePreview">close</span>
-		</a>
-
-		<a class="button" ng-click="toggleFullPreview()">
-			<span ng-if="!fullPreview">full preview</span>
-			<span ng-if="fullPreview">close</span>
-		</a>
-
-		<a class="button publish" ng-click="publishArticle()">publish</a>
-
-		<!--class="list entypo" ng-click="viewArticles()"></a>
-		<a class="preview entypo eye" ng-click="toggleEdit()" ng-hide="!edit"></a>
-		<a class="preview entypo pencil" ng-click="toggleEdit()" ng-hide="edit"></a>
-		<a class="save entypo save" ng-click="saveNote();"></a-->
-	</nav>
-
-	<div class="dimmer" ng-show="$root.currentStateName == 'article-edit.publish'"></div>
-
-	<div class="publish-popup" ng-class="{popup : $root.currentStateName == 'article-edit.publish'}">
-		<div ui-view ></div>
-	</div>
-	
-
 
 </div>

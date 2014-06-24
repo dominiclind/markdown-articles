@@ -1,4 +1,11 @@
-var app = angular.module('articles', ['ui.router' , 'ngAnimate', 'ngTagsInput', 'angular-loading-bar']);
+var app = angular.module('articles', [
+	'ui.router' , 
+	'ngAnimate', 
+	'ngTagsInput', 
+	'angular-loading-bar',
+	'monospaced.elastic',
+	'relativeDate']);
+
 app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'cfpLoadingBarProvider',
     function($stateProvider, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider) {
         $httpProvider.defaults.withCredentials = true;
@@ -26,6 +33,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'cfpLoading
 		        url: "/publish",
 		        templateUrl: 'views/article.publish.html',
 		        controller : 'ArticlePublishCtrl'
+		    })
+		    .state('me', {
+		        url: "/me",
+		        templateUrl: 'views/me.html',
+		        controller : 'MeCtrl'
 		    })
 
     }
