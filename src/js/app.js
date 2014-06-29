@@ -39,6 +39,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'cfpLoading
 		        templateUrl: 'views/me.html',
 		        controller : 'MeCtrl'
 		    })
+		    .state('search', {
+		        url: "/search",
+		        templateUrl: 'views/search.html',
+		        controller : 'SearchCtrl'
+		    })
 
     }
 ]);

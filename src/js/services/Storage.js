@@ -44,9 +44,14 @@ app.factory('Storage', ['$window', '$rootScope', '$q',function ($window, $rootSc
 		},
 		
 		saveArticle : function(article) {
-			var articles = this.getArticles();
+			var articles = this.getArticles(),
+				action = '';
 
-			var action = '';
+			if(article.title == undefined || article.title == ''){
+				console.log("not saving article due to no content");
+				return false;
+			}
+
 			for(key in articles){
 
 				if(articles[key].id == article.id){
@@ -60,8 +65,6 @@ app.factory('Storage', ['$window', '$rootScope', '$q',function ($window, $rootSc
 				action = 'new';
 			}
 
-
-			console.log(articles);
 			$window.localStorage.setItem('articles', JSON.stringify(articles));
 			$rootScope.$emit(action, article);
 		},

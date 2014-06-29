@@ -1,5 +1,9 @@
 <div class="editor">	
 
+	<div class="url-blocker" ng-if="isUrl">
+		<p>IS LINK</p>
+	</div>
+
 	<div class="editor-tooltip" ng-class="{ 'visible' : showTooltip }">
 	    <div id="editor-control">
 	    	<a ng-repeat="button in buttons" ng-click="fireControl(button.action)">{{button.name}}</a>

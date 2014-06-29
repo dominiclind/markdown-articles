@@ -23,6 +23,14 @@ app.controller('MainCtrl', ['$scope', '$rootScope', '$state', '$stateParams', fu
 		$state.go('me');
 	}
 
+	$scope.viewArticle = function(article) {
+		if(article.isUrl){
+			window.open(article.title);
+		}else{
+			$state.go('article', {id : article.id});
+		}
+	}
+
 	$scope.goToArticles = function() {
 		$state.go('articles');
 	}

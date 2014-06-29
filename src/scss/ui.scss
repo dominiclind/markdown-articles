@@ -43,5 +43,11 @@ a{
 			top: 4px;
 			margin-right: -9px;
 		}
+
+		&:hover{
+			.plus{
+				text-shadow: -3px 0px 0px $UI_BASE_COLOR;
+			}
+		}
 	}
 }

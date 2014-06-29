@@ -1,4 +1,4 @@
-app.directive('rFloatyLabel', ['$window', function ($window) {
+app.directive('rFloatyLabel', ['$window', '$rootScope', function ($window, $rootScope) {
   
   var RIGHT_OFFSET = 10;
 
@@ -8,7 +8,6 @@ app.directive('rFloatyLabel', ['$window', function ($window) {
         placeholder : '@rFloatyLabel'
       },
       link: function (scope, elm, attr) {
-          console.log(scope);
 
           elm.wrap('<div class="floaty">');
           elm.parent().append('<div class="floaty-label">'+ scope.placeholder +'</div>');
@@ -18,12 +17,9 @@ app.directive('rFloatyLabel', ['$window', function ($window) {
             elm.removeClass('empty');
             var label = elm.parent().find('.floaty-label');
 
-            label.addClass('type-' + label.text());
-
-            console.log(label);
+            label.addClass('type-' + scope.placeholder);
             if(elm.val().length > 0){
               elm.addClass('has-text')
-              console.log("HAS TEXTTT");
 
               label.addClass('showing');
               label.css({
@@ -38,6 +34,19 @@ app.directive('rFloatyLabel', ['$window', function ($window) {
               })
             }
           }
+          
+          $rootScope.$on('edit:isUrl', function(e,isUrl){
+            var label = elm.parent().find('.floaty-label');
+            if(scope.placeholder == 'title'){
+              var originalPlaceholder = attr.rFloatyLabel;
+              
+              if(isUrl){
+                label.text('url');
+              }else{
+                label.text(originalPlaceholder);
+              }
+            }
+          });
 
           window.setTimeout(function(){
             checkState();

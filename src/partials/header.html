@@ -3,12 +3,12 @@
 		
 	<div class="default-buttons">
 		
-		<a class="button" ng-click="search();">
+		<!--a class="button" ng-click="search();">
 			<span class="entypo search"></span>
 			search
-		</a>
+		</a-->
 
-		<a class="button write filled" ng-click="newArticle();">
+		<a ng-if="$root.currentStateName != 'article-edit'" class="button write filled" ng-click="newArticle();">
 			<span class="entypo text-doc"></span>
 			<span class="entypo plus"></span>
 			write

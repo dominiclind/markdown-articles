@@ -1,0 +1,15 @@
+<div class="search article-list">
+	<div class="content">
+		<div class="head">
+			<textarea autofocus msd-elastic class="title" ng-model="search" r-floaty-label="search" placeholder="type search here..."/></textarea>
+		</div>
+		
+		<ul>
+			<li class="list-item" ng-repeat="article in articles | filter:filterFunction | orderBy:'id':true" ng-click="viewArticle(article)">
+				<h1 class="title">{{ article.title }}</h1>
+				<p class="subtitle">{{article.subtitle}}</p>
+			</li>
+		</ul>
+	
+	</div>
+</div>

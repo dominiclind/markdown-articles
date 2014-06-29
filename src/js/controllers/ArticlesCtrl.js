@@ -2,14 +2,12 @@ app.controller('ArticlesCtrl', ['$scope', '$rootScope' ,'Storage', '$state', fun
 	console.log("Articles ctrl");
 
 	$scope.articles = Storage.getArticles();
+
+	console.log($scope.articles);
 	
 
 	Storage.getAllTags().then(function(t){
 		$scope.allTags = t;
 	});
-
-	$scope.viewArticle = function(article) {
-		$state.go('article', {id : article.id});
-	}
 
 }])

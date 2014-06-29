@@ -1,4 +1,4 @@
-app.directive('rEditor', ['$timeout', function ($timeout) {
+app.directive('rEditor', ['$timeout','$rootScope', function ($timeout, $rootScope) {
 	
 	var myEditor;
 
@@ -170,8 +170,9 @@ app.directive('rEditor', ['$timeout', function ($timeout) {
        		editorWrap   = elm.find('.editor'),
             tooltip      = elm.find('.editor-tooltip');
 
+            console.log(editorWrap[0].offsetTop);
             editorWrap.css({
-                'min-height' : (window.innerHeight - editorWrap[0].offsetTop) + 'px !important'
+                'min-height' : (window.innerHeight - editorWrap[0].offsetTop) + 'px'
             })
 
 

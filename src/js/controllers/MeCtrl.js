@@ -22,9 +22,6 @@ app.controller('MeCtrl', ['$scope', '$rootScope' ,'Storage', '$state', function 
 
 
 	// public
-	$scope.viewArticle = function(article) {
-		$state.go('article', {id : article.id});
-	}
 	$scope.filterArticles = function(action){
 		$scope.currentFilter = action;
 	}
