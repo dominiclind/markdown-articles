@@ -20,6 +20,9 @@ nav{
 	}
 
 	a.user{
+		position: relative;
+		top: 1px;
+
 		height: 40px;
 		padding: 1px 0;
 		color: $UI_BASE_COLOR;
@@ -32,5 +35,18 @@ nav{
 			background:$UI_BASE_COLOR;
 			color:white;
 		}
+	}
+
+	&.white{
+
+		.button{
+			color:white;
+			border-color:white;
+		}
+
+		a.user{
+			color:white;
+		}
+
 	}
 }

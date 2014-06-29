@@ -35,7 +35,6 @@ a{
 		color:white;
 	}
 
-
 	&.write{
 		.plus{
 			left: -9px;
@@ -49,5 +48,54 @@ a{
 				text-shadow: -3px 0px 0px $UI_BASE_COLOR;
 			}
 		}
+	}
+
+
+	//red
+	&.red{
+		background:$flat-red-1;
+		color:white;
+		border-color:$flat-red-1;
+
+		&:hover{
+			background:$flat-red-2;
+			border-color:$flat-red-2;
+		}
+	}
+
+	//published
+	&.published{
+		background:$UI_BASE_COLOR;
+		color:white;
+	}
+
+}
+
+// status
+
+.status{
+	display: inline-block;
+	padding: 0px 8px;
+	border-radius: 99px;
+
+	font-family:'Avenir';
+	font-size:12px;
+	font-weight:900;
+	text-transform:uppercase;
+	//border:2px solid #59be5c;
+	//background:#59be5c;
+	color:#59be5c;
+
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -14px;
+
+
+
+	&.published-false{
+		color:#eaa141;
+		border-color:#eaa141;
+		background:none;
 	}
 }

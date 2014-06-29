@@ -8,18 +8,56 @@
 			search
 		</a-->
 
-		<a ng-if="$root.currentStateName != 'article-edit'" class="button write filled" ng-click="newArticle();">
-			<span class="entypo text-doc"></span>
-			<span class="entypo plus"></span>
-			write
+
+		<!-- EDIT -->
+		<a class="button" ng-show="$root.currentStateName == 'article'"ng-click="editArticle();">
+			<span class="entypo pencil"></span>
+			<span>Edit</span>
 		</a>
 
-		<!--a class="button" ng-show="$root.currentStateName == 'article'"ng-click="editArticle();">
-			<span class="entypo pencil"></span>
-			edit
-		</a-->
+		<!-- DELETE -->
+		<span ng-switch="$root.deletePressed" ng-if="$root.currentStateName == 'article-edit'">
+			<span ng-switch-when="true">
+				<a class="button red"  ng-click="deleteArticle();">
+					<span class="entypo trash"></span>
+					<span>You Sure?</span>
+				</a>
+				<a class="button" ng-if="$root.currentStateName == 'article-edit'" ng-click="toggleDelete()">
+					<span>God No!</span>
+				</a>
+			</span>
+
+			<span ng-switch-default>
+				<a class="button red" ng-if="$root.currentStateName == 'article-edit'" ng-click="toggleDelete()">
+					<span class="entypo trash"></span>
+					<span>Delete</span>
+				</a>
+			</span>
+		</span>
 
 
+		<!-- PREVIEW -->
+		<a ng-if="$root.currentStateName == 'article-edit'" class="button" ng-click="previewArticle();">
+			<span class="entypo eye"></span>
+			<span>Preview</span>
+		</a>
+
+		<!-- WRITE -->
+		<a ng-if="$root.currentStateName != 'article-edit'" class="button write" ng-click="newArticle();">
+			<span class="entypo text-doc"></span>
+			<span class="entypo plus"></span>
+			<span>Write</span>
+		</a>
+
+
+		<!-- PUBLISH -->
+		<a ng-if="$root.currentStateName == 'article-edit'" class="button" ng-click="publishArticle();" r-publish-button>
+			<span class="entypo upload-cloud"></span>
+			<span>Publish</span>
+		</a>
+
+
+		<!-- ME -->
 		<a class="user" ng-click="goToMe();">
 			<span class="entypo user"></span>
 		</a>

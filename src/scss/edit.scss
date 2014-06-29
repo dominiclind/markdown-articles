@@ -4,6 +4,7 @@
 		border:none;
 		outline:none;
 		-webkit-appearance:none;
+		-webkit-font-smoothing:antialiased;
 		display:block;
 		background:white;
 		resize : none;
@@ -21,7 +22,7 @@
 		.title{
 			color:#2B2B2B;
 			font-size:50px;
-			line-height:63px;
+			line-height:55px;
 			font-weight:700;
 			height: 80px;
 		}

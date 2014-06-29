@@ -29,11 +29,11 @@ app.factory('Storage', ['$window', '$rootScope', '$q',function ($window, $rootSc
 
 		},
 
-		deleteArticle : function(article) {
+		deleteArticle : function(id) {
 			var articles = this.getArticles();
 
 			for(key in articles){
-				if(articles[key].id == article.id){
+				if(articles[key].id == id){
 					articles.splice(key,1);
 				}
 			}
@@ -43,7 +43,7 @@ app.factory('Storage', ['$window', '$rootScope', '$q',function ($window, $rootSc
 
 		},
 		
-		saveArticle : function(article) {
+		saveArticle : function(article, publish) {
 			var articles = this.getArticles(),
 				action = '';
 
@@ -54,15 +54,27 @@ app.factory('Storage', ['$window', '$rootScope', '$q',function ($window, $rootSc
 
 			for(key in articles){
 
+				// EDIT ARTICLE
 				if(articles[key].id == article.id){
-					articles[key] = article;
 					action = 'edited';
+					
+					if(publish == true){
+						console.log("publish article, set it to published");
+						article.published = true;
+					}else{
+						console.log("set article to non-published");
+						article.published = false;
+					}
+
+					articles[key] = article;
+					
 				}
 			}
 
+			// NEW ARTICLE
 			if(action != 'edited'){
-				articles.push(article);
 				action = 'new';
+				articles.push(article);
 			}
 
 			$window.localStorage.setItem('articles', JSON.stringify(articles));

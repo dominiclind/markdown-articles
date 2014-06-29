@@ -6,9 +6,11 @@
 		</ul>
 
 		<ul>
-			<li class="list-item" ng-repeat="article in articles | orderBy:'id':true" ng-click="viewArticle(article)">
+			<li class="list-item" ng-repeat="article in articles | orderBy:'id':true" ng-click="editArticle(article.id)">
 				<h1 class="title">{{ article.title }}</h1>
 				<p class="subtitle">{{article.subtitle}}</p>
+
+				<r-status article="article"></r-status>
 			</li>
 		</ul>
 
