@@ -1,3 +1,31 @@
+#hero{
+	position:relative;
+	background:tomato;
+	height:220px;
+	margin-bottom:80px;
+	-webkit-transition:opacity 1000ms ease 400ms;
+	opacity:0;
+
+	background-image:url('../img/suarez-vampire-teeth-face-scary-liverpool-madrid-transfer.jpg');
+	background-position: center center;
+
+	&.show{
+		opacity:1;
+	}
+	
+	.river-logo{
+		background-image:url('../img/river-transparent-logo.png');
+		background-repeat:none;
+		background-position:center center;
+		background-size: auto 550%;
+		position:absolute;
+		top:0;
+		left:0;
+		height:100%;
+		width:100%;
+	}
+}
+
 .article-list{
 	ul{
 		padding:0;
@@ -38,6 +66,36 @@
 			//opacity:0.4;
 			color:$UI_BASE_COLOR;
 		}
+
+		// status
+		.status{
+			display: inline-block;
+			padding: 0px 8px;
+			border-radius: 99px;
+
+			font-family:'Avenir';
+			font-size:12px;
+			font-weight:900;
+			text-transform:uppercase;
+			border:2px solid #59be5c;
+			background:#59be5c;
+			//color:#59be5c;
+			color:white;
+
+			position: absolute;
+			right: 0;
+			top: 50%;
+			margin-top: -12px;
+
+
+
+			&.published-false{
+				color:#eaa141;
+				border-color:#eaa141;
+				background:none;
+			}
+		}
+
 	}
 
 

@@ -1,0 +1,19 @@
+#profile-box{
+
+	margin-bottom:80px;
+	
+	.image{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		margin: 0 auto;
+		display: block;
+	}
+	.name{
+		font-family: 'Source Sans Pro';
+		font-weight: 300;
+		text-align: center;
+		font-size: 20px;
+		opacity: 0.7;
+	}
+}

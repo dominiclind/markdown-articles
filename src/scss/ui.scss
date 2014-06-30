@@ -70,32 +70,3 @@ a{
 	}
 
 }
-
-// status
-
-.status{
-	display: inline-block;
-	padding: 0px 8px;
-	border-radius: 99px;
-
-	font-family:'Avenir';
-	font-size:12px;
-	font-weight:900;
-	text-transform:uppercase;
-	//border:2px solid #59be5c;
-	//background:#59be5c;
-	color:#59be5c;
-
-	position: absolute;
-	right: 0;
-	top: 50%;
-	margin-top: -14px;
-
-
-
-	&.published-false{
-		color:#eaa141;
-		border-color:#eaa141;
-		background:none;
-	}
-}

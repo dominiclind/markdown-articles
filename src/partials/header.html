@@ -1,5 +1,8 @@
 <nav class="top clearfix">
-	<a class="home logo" ng-click="goToArticles();"></a>
+	<a class="home logo" ng-class="{
+	'animated fadeOut'  : $root.currentStateName == 'articles',
+	'animated fadeInDown'  : $root.currentStateName != 'articles'
+	}" ng-click="goToArticles();"></a>
 		
 	<div class="default-buttons">
 		
@@ -10,7 +13,7 @@
 
 
 		<!-- EDIT -->
-		<a class="button" ng-show="$root.currentStateName == 'article'"ng-click="editArticle();">
+		<a class="button" ng-if="$root.currentStateName == 'article'"ng-click="editArticle();">
 			<span class="entypo pencil"></span>
 			<span>Edit</span>
 		</a>
