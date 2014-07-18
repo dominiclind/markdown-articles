@@ -77,10 +77,10 @@
 			font-size:12px;
 			font-weight:900;
 			text-transform:uppercase;
-			border:2px solid #59be5c;
-			background:#59be5c;
-			//color:#59be5c;
-			color:white;
+			//border:2px solid #59be5c;
+			//background:#59be5c;
+			color:#59be5c;
+			//color:white;
 
 			position: absolute;
 			right: 0;
@@ -91,7 +91,7 @@
 
 			&.published-false{
 				color:#eaa141;
-				border-color:#eaa141;
+				//border-color:#eaa141;
 				background:none;
 			}
 		}
